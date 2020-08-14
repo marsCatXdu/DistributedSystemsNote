@@ -41,6 +41,8 @@ RDD: Resilient Distributed Datasets （弹性分布式数据集），我们可�
 
 一个分布式计算任务涉及到的不同 RDD 之间存在依赖关系， RDD 的每次转换都会生成一个新的依赖关系，RDD 及其之间的依赖关系就组成了 DAG 。
 
+在Spark 中可以对 RDD 内部元素进行并行的粗粒度操作，具体操作由应用层定义
+
 #### RDD 转换举例：日志过滤
 
 ![image-20200813235930202](img/image-20200813235930202.png)
@@ -57,6 +59,10 @@ RDD: Resilient Distributed Datasets （弹性分布式数据集），我们可�
 
 ![image-20200814005337741](img/image-20200814005337741.png)
 
+在 Spark 中，我们可以认为每个 RDD 都是只读的，所有对 RDD 的操作都会生成一个新的 RDD 而非覆盖原有数据
+
+![image-20200814005830954](img/image-20200814005830954.png)
+
 
 
 
@@ -65,7 +71,7 @@ RDD: Resilient Distributed Datasets （弹性分布式数据集），我们可�
 
 ## 常用的 RDD 算子
 
-
+![image-20200814010128425](img/image-20200814010128425.png)
 
 
 
